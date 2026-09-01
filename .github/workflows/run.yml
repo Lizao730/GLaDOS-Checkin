@@ -1,10 +1,8 @@
 name: GLaDOS Auto Check-in
 
 on:
-  # 保留手动执行按钮，方便测试
   workflow_dispatch:
 
-  # 每天北京时间 09:15 自动执行
   schedule:
     - cron: '15 9 * * *'
       timezone: 'Asia/Shanghai'
@@ -24,10 +22,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '18'
           cache: 'npm'
